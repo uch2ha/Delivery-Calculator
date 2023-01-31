@@ -4,8 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 50rem;
-  font-size: 2rem;
-  margin-block: 2rem;
+  margin-top: 5rem;
 }
 
 .calculator-logo {
@@ -16,6 +15,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
 }
 
 .calculator-inputs {
@@ -25,10 +29,13 @@
   align-items: center;
   width: 100%;
   margin-block: 3rem;
+  font-weight: 650;
+  font-size: 1.3rem;
 }
 
 .calculator-inputs div {
   text-transform: uppercase;
+  border-radius: 5px;
   margin-block: 0.2rem;
   height: 3rem;
   width: 100%;
@@ -62,16 +69,18 @@
   font-size: 1.5rem;
   border: none;
   background: transparent;
-  color: var(--color-black);
+  color: var(--color-light-grey);
 }
 
 .delivery-input {
   text-transform: none !important;
+  padding-right: 1.15rem;
 }
 
 .input-body input:focus {
   outline: none;
 }
+
 .date-input {
   width: fit-content !important;
 }
@@ -91,6 +100,7 @@
 }
 
 .calculator-btn div {
+  border-radius: 5px;
   height: 3rem;
   background-color: var(--color-pink);
   display: flex;
@@ -99,9 +109,11 @@
 }
 
 .calculator-btn button {
+  text-transform: uppercase;
   background: transparent;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .btn-calculate {
@@ -110,15 +122,17 @@
 }
 
 .btn-refresh {
-  /* background-color: var(--color-purple) !important; */
   width: 25%;
 }
 
 .calculator-result {
+  border-radius: 5px;
   background-color: var(--color-pink);
   width: 100%;
   margin-top: 2rem;
   height: 3rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .calculator-result div {
@@ -128,4 +142,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.calculator-result div div {
+  padding-inline: 0rem;
 }

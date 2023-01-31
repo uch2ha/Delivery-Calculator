@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import NavBar from '../navBar/NavBar';
 import moment from 'moment-timezone';
 import calculateDeliveryFee from '../../functionality/calculations';
+import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 
 const MainPage: React.FC = (): JSX.Element => {
   const [cartValue, setCartValue] = useState(0);
@@ -80,7 +81,7 @@ const MainPage: React.FC = (): JSX.Element => {
                 value={cartValue}
                 onChange={handleInput}
               />
-              €
+              <RiMoneyEuroCircleLine size={30} />
             </span>
           </div>
           <div>
@@ -138,7 +139,10 @@ const MainPage: React.FC = (): JSX.Element => {
         <div className='calculator-result'>
           <div>
             <span>Delivery price</span>
-            <span>= {deliveryPrice}€</span>
+            <div>
+              <span>= {deliveryPrice}</span>
+              <RiMoneyEuroCircleLine size={30} />
+            </div>
           </div>
         </div>
       </div>

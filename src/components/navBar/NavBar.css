@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
+  border-radius: 5px;
 }
 
 .nav-bar-container div {
@@ -16,7 +17,8 @@
 }
 
 .nav-bar-logo {
-  font-size: 2rem;
+  /* padding-top: 0.3rem; */
+  font-size: 1.4rem;
   font-family: 'Fearce';
 }
 .nav-bar-logo a {
@@ -25,9 +27,10 @@
 }
 
 .nav-bar-btns {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .nav-bar-btns span {
+  letter-spacing: 1.5px;
   padding-inline: 2rem;
 }

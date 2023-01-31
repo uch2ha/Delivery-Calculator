@@ -12,9 +12,15 @@ const NavBar: React.FC = (): JSX.Element => {
         </a>
       </div>
       <div className='nav-bar-btns'>
-        <span onClick={() => navigate('/')}>main</span>
-        <span onClick={() => navigate('/history')}>history</span>
-        <span onClick={() => navigate('/about')}>about</span>
+        <span className='btn' onClick={() => navigate('/')}>
+          main
+        </span>
+        <span className='btn' onClick={() => navigate('/history')}>
+          history
+        </span>
+        <span className='btn' onClick={() => navigate('/about')}>
+          about
+        </span>
       </div>
     </div>
   );

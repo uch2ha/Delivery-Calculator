@@ -8,14 +8,16 @@ const MainPage: React.FC = (): JSX.Element => {
   const [cartValue, setCartValue] = useState(0);
   const [distance, setDistance] = useState(0);
   const [itemsAmount, setItemsAmount] = useState(0);
-  const [date, setDate] = useState('');
+  const [userDate, setUserDate] = useState('');
+  const [utcDate, setUtcDate] = useState('');
   const [deliveryPrice, setDeliveryPrice] = useState(0);
 
   const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e): void => {
     const { id, value } = e.target;
 
     if (id === 'date') {
-      setDate(fundTimeZoneConverTimeToUTC(value));
+      setUserDate(value);
+      setUtcDate(fundTimeZoneConverTimeToUTC(value));
     }
     if (value.length >= 17) {
       return;
@@ -44,8 +46,8 @@ const MainPage: React.FC = (): JSX.Element => {
   };
 
   const calculateDeliveryHandler = () => {
-    // calculateDeliveryFee({ cartValue, distance, itemsAmount, date });
-    console.log(cartValue, distance, itemsAmount, date);
+    calculateDeliveryFee({ cartValue, distance, itemsAmount, date: utcDate });
+    console.log(cartValue, distance, itemsAmount, utcDate);
   };
 
   return (
@@ -106,7 +108,7 @@ const MainPage: React.FC = (): JSX.Element => {
                 className='date-input'
                 id='date'
                 type='datetime-local'
-                value={date}
+                value={userDate}
                 onChange={handleInput}
               />
               Icon

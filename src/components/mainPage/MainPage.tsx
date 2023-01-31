@@ -9,7 +9,7 @@ const MainPage: React.FC = (): JSX.Element => {
   const [distance, setDistance] = useState(0);
   const [itemsAmount, setItemsAmount] = useState(0);
   const [userDate, setUserDate] = useState('');
-  const [utcDate, setUtcDate] = useState('');
+  const [utcDate, setUtcDate] = useState(moment);
   const [deliveryPrice, setDeliveryPrice] = useState(0);
 
   const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e): void => {
@@ -22,7 +22,7 @@ const MainPage: React.FC = (): JSX.Element => {
     if (value.length >= 17) {
       return;
     }
-    if (!Number(value)) {
+    if (!Number(value) && value !== '') {
       return;
     }
     if (id === 'cartValue') {
@@ -42,12 +42,14 @@ const MainPage: React.FC = (): JSX.Element => {
     // create date with browser timezon
     const date = moment(time).tz(tz);
     // return date with UTC format
-    return date.utc().format();
+    return moment(date.utc().format());
   };
 
   const calculateDeliveryHandler = () => {
-    calculateDeliveryFee({ cartValue, distance, itemsAmount, date: utcDate });
-    console.log(cartValue, distance, itemsAmount, utcDate);
+    if (cartValue === 0 || distance === 0 || itemsAmount === 0) return;
+    setDeliveryPrice(
+      calculateDeliveryFee({ cartValue, distance, itemsAmount, date: utcDate })
+    );
   };
 
   return (

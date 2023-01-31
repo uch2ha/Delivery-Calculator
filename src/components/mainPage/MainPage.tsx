@@ -52,6 +52,15 @@ const MainPage: React.FC = (): JSX.Element => {
     );
   };
 
+  const refresh = () => {
+    setCartValue(0);
+    setDistance(0);
+    setItemsAmount(0);
+    setUserDate('');
+    setUtcDate(moment);
+    setDeliveryPrice(0);
+  };
+
   return (
     <div className='root-container'>
       <NavBar />
@@ -116,10 +125,15 @@ const MainPage: React.FC = (): JSX.Element => {
             </span>
           </div>
         </div>
-        <div className='calculator-btn btn'>
-          <button className='btn' onClick={() => calculateDeliveryHandler()}>
-            Calculate delivery price
-          </button>
+        <div className='calculator-btn'>
+          <div className='btn-calculate btn'>
+            <button onClick={() => calculateDeliveryHandler()}>
+              Calculate delivery price
+            </button>
+          </div>
+          <div className='btn-refresh btn'>
+            <button onClick={() => refresh()}>Refresh</button>
+          </div>
         </div>
         <div className='calculator-result'>
           <div>

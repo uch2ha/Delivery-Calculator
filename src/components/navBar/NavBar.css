@@ -1,22 +1,25 @@
 .nav-bar-container {
-  border-bottom: 1px solid red;
-  width: 100%;
+  border: 1px solid red;
+  width: 90%;
   min-height: 5rem;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  text-transform: uppercase;
+}
+
+.nav-bar-container div {
+  padding-inline: 2rem;
 }
 
 .nav-bar-logo {
-  position: fixed;
-  left: 2rem;
   font-size: 2rem;
 }
 
 .nav-bar-btns {
   font-size: 1.5rem;
-  text-transform: uppercase;
 }
 
 .nav-bar-btns span {

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
 import './MainPage.css';
+import React, { useState } from 'react';
 import NavBar from '../navBar/NavBar';
+import moment from 'moment-timezone';
+import calculateDeliveryFee from '../../functionality/calculations';
 
 const MainPage: React.FC = (): JSX.Element => {
   const [cartValue, setCartValue] = useState(0);
@@ -9,11 +11,15 @@ const MainPage: React.FC = (): JSX.Element => {
   const [date, setDate] = useState('');
   const [deliveryPrice, setDeliveryPrice] = useState(0);
 
-  console.log(date);
-
   const handleInput: React.ChangeEventHandler<HTMLInputElement> = (e): void => {
     const { id, value } = e.target;
 
+    if (id === 'date') {
+      setDate(fundTimeZoneConverTimeToUTC(value));
+    }
+    if (value.length >= 17) {
+      return;
+    }
     if (!Number(value)) {
       return;
     }
@@ -26,6 +32,20 @@ const MainPage: React.FC = (): JSX.Element => {
     if (id === 'itemsAmount') {
       setItemsAmount(Number(value));
     }
+  };
+
+  const fundTimeZoneConverTimeToUTC = (time: string) => {
+    // get timezone from browser
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    // create date with browser timezon
+    const date = moment(time).tz(tz);
+    // return date with UTC format
+    return date.utc().format();
+  };
+
+  const calculateDeliveryHandler = () => {
+    // calculateDeliveryFee({ cartValue, distance, itemsAmount, date });
+    console.log(cartValue, distance, itemsAmount, date);
   };
 
   return (
@@ -78,25 +98,31 @@ const MainPage: React.FC = (): JSX.Element => {
             </span>
           </div>
           <div>
-            <span className='input-name'>Date</span>
+            <span className='input-name'>Time</span>
           </div>
           <div>
             <span className='input-body'>
               <input
-                type='date'
+                className='date-input'
+                id='date'
+                type='datetime-local'
                 value={date}
-                onChange={(e) => setDate(e.target.value)}
+                onChange={handleInput}
               />
               Icon
             </span>
           </div>
         </div>
         <div className='calculator-btn'>
-          <button>Calculate delivery price</button>
+          <button onClick={() => calculateDeliveryHandler()}>
+            Calculate delivery price
+          </button>
         </div>
         <div className='calculator-result'>
-          <span>Delivery price</span>
-          <span>= 2€</span>
+          <div>
+            <span>Delivery price</span>
+            <span>= {deliveryPrice}€</span>
+          </div>
         </div>
       </div>
     </div>

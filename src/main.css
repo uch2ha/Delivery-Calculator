@@ -27,6 +27,7 @@
     rgba(125, 119, 216, 1) 25%,
     rgba(218, 138, 163, 1) 92%
   );
+  background-repeat: no-repeat;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,6 +47,7 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  overflow: scroll;
 }
 
 .btn {
@@ -57,4 +59,9 @@ body {
 
 .btn button:hover {
   cursor: pointer;
+}
+
+/* Remove scrollbar */
+::-webkit-scrollbar {
+  display: none;
 }

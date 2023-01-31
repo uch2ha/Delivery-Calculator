@@ -113,12 +113,11 @@ const MainPage: React.FC = (): JSX.Element => {
                 value={userDate}
                 onChange={handleInput}
               />
-              Icon
             </span>
           </div>
         </div>
-        <div className='calculator-btn'>
-          <button onClick={() => calculateDeliveryHandler()}>
+        <div className='calculator-btn btn'>
+          <button className='btn' onClick={() => calculateDeliveryHandler()}>
             Calculate delivery price
           </button>
         </div>

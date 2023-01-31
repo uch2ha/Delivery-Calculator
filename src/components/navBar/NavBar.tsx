@@ -7,7 +7,10 @@ const NavBar: React.FC = (): JSX.Element => {
   return (
     <div className='nav-bar-container'>
       <div className='nav-bar-logo'>
-        <a href='https://github.com/uch2ha' target='_blank'>
+        <a
+          href='https://www.linkedin.com/in/dmitry-sinyavskiy/'
+          target='_blank'
+        >
           <span>Dmitry Sinyavskiy</span>
         </a>
       </div>

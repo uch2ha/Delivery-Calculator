@@ -12,9 +12,20 @@
   line-height: 24px;
   font-weight: 400;
 
+  --color-black: #0f0f0f;
+  --color-white: #f7f7f7;
+  --color-purple: #9b9be0;
+  --color-blue: #7d77d8;
+  --color-pink: #da8aa3;
+  --color-grey: #bcbcdd;
+
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background: rgb(125, 119, 216);
+  background: linear-gradient(
+    0deg,
+    rgba(125, 119, 216, 1) 25%,
+    rgba(218, 138, 163, 1) 92%
+  );
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

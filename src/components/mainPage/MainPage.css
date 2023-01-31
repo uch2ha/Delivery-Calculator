@@ -9,7 +9,8 @@
 }
 
 .calculator-logo {
-  border: 1px solid red;
+  background: var(--color-blue);
+  color: var(--color-white);
   width: 100%;
   height: 4rem;
   display: flex;
@@ -31,9 +32,16 @@
   margin-block: 0.2rem;
   height: 3rem;
   width: 100%;
-  border: 1px solid red;
   display: flex;
   align-items: center;
+  color: var(--color-black);
+}
+
+.calculator-inputs div:nth-of-type(odd) {
+  background-color: var(--color-purple);
+}
+.calculator-inputs div:nth-of-type(even) {
+  background-color: var(--color-grey);
 }
 
 .input-name {
@@ -54,6 +62,7 @@
   font-size: 1.5rem;
   border: none;
   background: transparent;
+  color: var(--color-black);
 }
 
 .delivery-input {
@@ -67,16 +76,23 @@
   width: fit-content !important;
 }
 
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+::-webkit-calendar-picker-indicator:hover {
+  cursor: pointer;
+}
+
 .calculator-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 3rem;
 }
 
 .calculator-btn div {
-  border: 1px solid red;
+  height: 3rem;
+  background-color: var(--color-pink);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,11 +110,12 @@
 }
 
 .btn-refresh {
+  /* background-color: var(--color-purple) !important; */
   width: 25%;
 }
 
 .calculator-result {
-  border: 1px solid red;
+  background-color: var(--color-pink);
   width: 100%;
   margin-top: 2rem;
   height: 3rem;

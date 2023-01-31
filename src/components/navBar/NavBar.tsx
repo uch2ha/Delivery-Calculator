@@ -7,11 +7,14 @@ const NavBar: React.FC = (): JSX.Element => {
   return (
     <div className='nav-bar-container'>
       <div className='nav-bar-logo'>
-        <span>Dmitry Sinyavskiy</span>
+        <a href='https://github.com/uch2ha' target='_blank'>
+          <span>Dmitry Sinyavskiy</span>
+        </a>
       </div>
       <div className='nav-bar-btns'>
         <span onClick={() => navigate('/')}>main</span>
         <span onClick={() => navigate('/history')}>history</span>
+        <span onClick={() => navigate('/about')}>about</span>
       </div>
     </div>
   );

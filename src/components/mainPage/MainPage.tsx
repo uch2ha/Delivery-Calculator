@@ -78,7 +78,7 @@ const MainPage: React.FC = (): JSX.Element => {
             <span className='input-name'>Delivery distance</span>
           </div>
           <div>
-            <span className='input-body'>
+            <span className='input-body delivery-input'>
               <input
                 type='text'
                 id='distance'

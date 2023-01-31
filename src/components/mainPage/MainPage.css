@@ -56,6 +56,10 @@
   background: transparent;
 }
 
+.delivery-input {
+  text-transform: none !important;
+}
+
 .input-body input:focus {
   outline: none;
 }

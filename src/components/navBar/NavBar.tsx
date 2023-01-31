@@ -12,7 +12,6 @@ const NavBar: React.FC = (): JSX.Element => {
       <div className='nav-bar-btns'>
         <span onClick={() => navigate('/')}>main</span>
         <span onClick={() => navigate('/history')}>history</span>
-        <span onClick={() => navigate('/about')}>about</span>
       </div>
     </div>
   );

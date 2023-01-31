@@ -1,6 +1,5 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import MainPage from './components/mainPage/MainPage';
-import AboutPage from './components/aboutPage/AboutPage';
 import HistoryPage from './components/historyPage/HistoryPage';
 
 function App() {
@@ -11,9 +10,6 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/history' element={<HistoryPage />} />
-      </Routes>
-      <Routes>
-        <Route path='/about' element={<AboutPage />} />
       </Routes>
     </BrowserRouter>
   );

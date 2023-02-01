@@ -109,7 +109,7 @@
   align-items: center;
 }
 
-.calculator-btn button {
+.calculator-btn span {
   text-transform: uppercase;
   background: transparent;
   border: none;

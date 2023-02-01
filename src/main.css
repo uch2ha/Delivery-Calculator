@@ -57,10 +57,6 @@ body {
   cursor: pointer;
 }
 
-.btn button:hover {
-  cursor: pointer;
-}
-
 /* Remove scrollbar */
 ::-webkit-scrollbar {
   display: none;

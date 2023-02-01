@@ -146,13 +146,14 @@ const MainPage: React.FC = (): JSX.Element => {
           </div>
         </div>
         <div className='calculator-btn'>
-          <div className='btn-calculate btn'>
-            <button onClick={() => calculateDeliveryHandler()}>
-              Calculate delivery price
-            </button>
+          <div
+            className='btn-calculate btn'
+            onClick={() => calculateDeliveryHandler()}
+          >
+            <span>Calculate delivery price</span>
           </div>
-          <div className='btn-refresh btn'>
-            <button onClick={() => handleRefresh()}>Refresh</button>
+          <div className='btn-refresh btn' onClick={() => handleRefresh()}>
+            <span>Refresh</span>
           </div>
         </div>
         <div className='calculator-result'>

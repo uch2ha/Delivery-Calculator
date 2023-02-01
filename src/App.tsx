@@ -8,12 +8,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<MainPage />} />
-      </Routes>
-      <Routes>
         <Route path='/history' element={<HistoryPage />} />
-      </Routes>
-      <Routes>
         <Route path='/about' element={<AboutPage />} />
+        <Route path='*' element={<h1>Path not resolved</h1>} />
       </Routes>
     </BrowserRouter>
   );

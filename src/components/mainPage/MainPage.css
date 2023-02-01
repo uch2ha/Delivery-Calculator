@@ -5,7 +5,7 @@
   align-items: center;
   width: 50rem;
   margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .calculator-logo {
@@ -73,7 +73,7 @@
   color: var(--color-light-grey);
 }
 
-.delivery-input {
+.delivery-icon {
   text-transform: none !important;
   padding-right: 1.15rem;
 }

@@ -48,12 +48,21 @@ const MainPage: React.FC = (): JSX.Element => {
 
   const calculateDeliveryHandler = () => {
     if (cartValue === 0 || distance === 0 || itemsAmount === 0) return;
+
+    const id = moment().format();
+
     setDeliveryPrice(
-      calculateDeliveryFee({ cartValue, distance, itemsAmount, date: utcDate })
+      calculateDeliveryFee({
+        id,
+        cartValue,
+        distance,
+        itemsAmount,
+        utcDate,
+      })
     );
   };
 
-  const refresh = () => {
+  const handleRefresh = () => {
     setCartValue(0);
     setDistance(0);
     setItemsAmount(0);
@@ -133,7 +142,7 @@ const MainPage: React.FC = (): JSX.Element => {
             </button>
           </div>
           <div className='btn-refresh btn'>
-            <button onClick={() => refresh()}>Refresh</button>
+            <button onClick={() => handleRefresh()}>Refresh</button>
           </div>
         </div>
         <div className='calculator-result'>

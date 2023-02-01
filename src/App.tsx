@@ -2,6 +2,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import MainPage from './components/mainPage/MainPage';
 import HistoryPage from './components/historyPage/HistoryPage';
 import AboutPage from './components/about/AboutPage';
+import NotFoundPage from './components/notFoundPage/NotFoundPage';
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='/history' element={<HistoryPage />} />
         <Route path='/about' element={<AboutPage />} />
-        <Route path='*' element={<h1>Path not resolved</h1>} />
+        <Route path='*' element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,32 @@
+.history-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  width: 90%;
+  overflow: scroll;
+  text-transform: uppercase;
+}
+
+.history-delete-all-btn {
+  width: 17rem;
+  background: var(--color-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  margin-top: 2rem;
+  min-height: 2.5rem;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}
+
+.history-card-grid {
+  width: 85%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+}

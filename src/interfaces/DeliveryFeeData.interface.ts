@@ -1,9 +1,11 @@
 import moment from 'moment-timezone';
 
-export interface IdeliveryFeeData {
+export interface IDeliveryFeeData {
+  id: string;
   cartValue: number;
   distance: number;
   itemsAmount: number;
-  date: moment.Moment;
-  delivery_price?: number;
+  userDate?: string;
+  utcDate?: moment.Moment;
+  deliveryPrice?: number;
 }

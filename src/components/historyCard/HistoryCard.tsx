@@ -2,7 +2,13 @@ import React from 'react';
 import './HistoryCard.css';
 import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 import { TiDeleteOutline } from 'react-icons/ti';
-const HistoryCard = () => {
+import { IDeliveryFeeData } from '../../interfaces/DeliveryFeeData.interface';
+
+interface IProps extends IDeliveryFeeData {}
+
+const HistoryCard: React.FC<IProps> = (props) => {
+  const { id, cartValue, distance, itemsAmount, userDate, deliveryPrice } =
+    props;
   return (
     <div className='history-card-container'>
       <div className='value-row'>
@@ -10,7 +16,7 @@ const HistoryCard = () => {
           <span>Cart value</span>
         </div>
         <div className='card-amount'>
-          <span>20 </span>
+          <span>{cartValue}</span>
           <span>
             <RiMoneyEuroCircleLine size={30} />
           </span>
@@ -24,7 +30,7 @@ const HistoryCard = () => {
           <span>Delivery distance</span>
         </div>
         <div className='card-amount'>
-          <span>2000</span>
+          <span>{distance}</span>
           <span className='delivery-icon'>m</span>
         </div>
       </div>
@@ -33,7 +39,7 @@ const HistoryCard = () => {
           <span>Amount of items</span>
         </div>
         <div className='card-amount'>
-          <span>20</span>
+          <span>{itemsAmount}</span>
         </div>
       </div>
       <div className='value-row'>
@@ -41,14 +47,14 @@ const HistoryCard = () => {
           <span>Time</span>
         </div>
         <div className='card-amount'>
-          <span>20</span>
+          <span>{userDate}</span>
         </div>
       </div>
       <div className='card-result'>
         <div>
           <span>Delivery price</span>
           <div>
-            <span>= 20</span>
+            <span>= {deliveryPrice}</span>
             <RiMoneyEuroCircleLine size={30} />
           </div>
         </div>

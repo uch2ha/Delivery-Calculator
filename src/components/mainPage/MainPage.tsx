@@ -4,6 +4,7 @@ import NavBar from '../navBar/NavBar';
 import moment from 'moment-timezone';
 import calculateDeliveryFee from '../../functionality/calculations';
 import { RiMoneyEuroCircleLine } from 'react-icons/ri';
+import { updateLocalStorage } from '../../functionality/localStotage';
 
 const MainPage: React.FC = (): JSX.Element => {
   const [cartValue, setCartValue] = useState(0);
@@ -51,15 +52,24 @@ const MainPage: React.FC = (): JSX.Element => {
 
     const id = moment().format();
 
-    setDeliveryPrice(
-      calculateDeliveryFee({
-        id,
-        cartValue,
-        distance,
-        itemsAmount,
-        utcDate,
-      })
-    );
+    const deliveryPrice = calculateDeliveryFee({
+      id,
+      cartValue,
+      distance,
+      itemsAmount,
+      utcDate,
+    });
+
+    setDeliveryPrice(deliveryPrice);
+
+    updateLocalStorage({
+      id,
+      cartValue,
+      distance,
+      itemsAmount,
+      userDate,
+      deliveryPrice,
+    });
   };
 
   const handleRefresh = () => {

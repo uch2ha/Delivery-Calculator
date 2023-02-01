@@ -1,8 +1,8 @@
-import { IdeliveryFeeData } from '../interfaces/DeliveryFeeData.interface';
+import { IDeliveryFeeData } from '../interfaces/DeliveryFeeData.interface';
 import moment from 'moment-timezone';
 
-const calculateDeliveryFee = (data: IdeliveryFeeData): number => {
-  const { cartValue, distance, itemsAmount, date } = data;
+const calculateDeliveryFee = (data: IDeliveryFeeData): number => {
+  const { cartValue, distance, itemsAmount, utcDate } = data;
   let deliveryPrice = 0;
 
   if (cartValue >= 100) return 0;
@@ -10,7 +10,7 @@ const calculateDeliveryFee = (data: IdeliveryFeeData): number => {
   deliveryPrice += cartValueFn(cartValue);
   deliveryPrice += distanceFn(distance);
   deliveryPrice += itemsAmountFn(itemsAmount);
-  deliveryPrice *= dateFn(date) ? 1.2 : 1;
+  deliveryPrice *= dateFn(utcDate) ? 1.2 : 1;
 
   return deliveryPrice >= 15 ? 15 : deliveryPrice;
 };

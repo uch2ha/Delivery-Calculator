@@ -1,6 +1,6 @@
 import { IDeliveryFeeData } from '../interfaces/DeliveryFeeData.interface';
 
-export const updateLocalStorage = (item: IDeliveryFeeData) => {
+export const updateLocalStorage = (item: IDeliveryFeeData): void => {
   const stringData = localStorage.getItem('DeliveryFeeData');
   // if local storage is empty add first item to it
   if (!stringData)
@@ -10,6 +10,7 @@ export const updateLocalStorage = (item: IDeliveryFeeData) => {
 
   let isDuplicate = false;
 
+  // check if array contains same item as current
   data.forEach((el: IDeliveryFeeData) => {
     const { cartValue, distance, itemsAmount, userDate } = el;
     const {
@@ -18,7 +19,7 @@ export const updateLocalStorage = (item: IDeliveryFeeData) => {
       itemsAmount: itemsAmount2,
       userDate: userDate2,
     } = item;
-    // check if array contains same item as current
+
     if (
       cartValue === cartValue2 &&
       distance === distance2 &&
@@ -36,4 +37,28 @@ export const updateLocalStorage = (item: IDeliveryFeeData) => {
   return localStorage.setItem('DeliveryFeeData', JSON.stringify(data));
 };
 
-export const fetchLocalStorage = () => {};
+export const fetchLocalStorage = (): IDeliveryFeeData[] => {
+  const stringData = localStorage.getItem('DeliveryFeeData');
+
+  if (!stringData) return [];
+
+  const data = JSON.parse(stringData);
+
+  return data;
+};
+
+export const removeOneItemLocalStorage = (id: string): void => {
+  const stringData = localStorage.getItem('DeliveryFeeData');
+
+  if (!stringData) return;
+
+  const data = JSON.parse(stringData);
+
+  const updatedData = data.filter((el: IDeliveryFeeData) => el.id !== id);
+
+  localStorage.setItem('DeliveryFeeData', JSON.stringify(updatedData));
+};
+
+export const removeAllLocalStorage = (): void => {
+  localStorage.removeItem('DeliveryFeeData');
+};

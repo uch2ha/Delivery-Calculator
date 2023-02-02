@@ -52,7 +52,7 @@ body {
 
 .btn:hover {
   cursor: pointer;
-  box-shadow: 1px 1px 5px 4px white;
+  box-shadow: 0px 0px 5px 2.5px white;
   border-radius: 10px;
 }
 

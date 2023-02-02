@@ -5,8 +5,10 @@ import moment from 'moment-timezone';
 import calculateDeliveryFee from '../../functionality/calculations';
 import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 import { updateLocalStorage } from '../../functionality/localStotage';
+import { useNavigate } from 'react-router-dom';
 
 const MainPage: React.FC = (): JSX.Element => {
+  const navigate = useNavigate();
   const [cartValue, setCartValue] = useState(0);
   const [distance, setDistance] = useState(0);
   const [itemsAmount, setItemsAmount] = useState(0);
@@ -85,7 +87,7 @@ const MainPage: React.FC = (): JSX.Element => {
     <div className='root-container'>
       <NavBar />
       <div className='calculator-container'>
-        <div className='calculator-logo btn'>
+        <div className='calculator-logo btn' onClick={() => navigate('/about')}>
           <span>Delivery Fee Calculator</span>
         </div>
         <div className='calculator-inputs'>

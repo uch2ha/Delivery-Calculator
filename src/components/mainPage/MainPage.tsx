@@ -85,7 +85,7 @@ const MainPage: React.FC = (): JSX.Element => {
     <div className='root-container'>
       <NavBar />
       <div className='calculator-container'>
-        <div className='calculator-logo'>
+        <div className='calculator-logo btn'>
           <span>Delivery Fee Calculator</span>
         </div>
         <div className='calculator-inputs'>

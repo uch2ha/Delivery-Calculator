@@ -6,7 +6,7 @@ const NavBar: React.FC = (): JSX.Element => {
   const navigate = useNavigate();
   return (
     <div className='nav-bar-container'>
-      <div className='nav-bar-logo'>
+      <div className='nav-bar-logo btn'>
         <a
           href='https://www.linkedin.com/in/dmitry-sinyavskiy/'
           target='_blank'

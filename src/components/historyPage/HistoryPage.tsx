@@ -22,7 +22,7 @@ const HistoryPage: React.FC = (): JSX.Element => {
     <div className='root-container'>
       <NavBar />
       <div
-        className='history-delete-all-btn'
+        className='history-delete-all-btn btn'
         onClick={() => {
           if (window.confirm('Are you sure you want to delete all items')) {
             removeAllLocalStorage();

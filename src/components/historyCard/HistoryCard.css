@@ -6,6 +6,7 @@
   font-size: 1.15rem;
   color: var(--color-black);
   font-weight: 650;
+  cursor: default;
 }
 
 .value-row {

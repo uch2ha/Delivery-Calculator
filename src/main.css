@@ -50,11 +50,14 @@ body {
   overflow: scroll;
 }
 
-.btn {
-}
-
 .btn:hover {
   cursor: pointer;
+  box-shadow: 1px 1px 5px 4px white;
+  border-radius: 10px;
+}
+
+.btn:active {
+  transform: translateY(2px);
 }
 
 /* Remove scrollbar */

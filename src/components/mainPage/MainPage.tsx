@@ -60,6 +60,7 @@ const MainPage: React.FC = (): JSX.Element => {
       distance,
       itemsAmount,
       utcDate,
+      userDate,
     });
 
     setDeliveryPrice(deliveryPrice);

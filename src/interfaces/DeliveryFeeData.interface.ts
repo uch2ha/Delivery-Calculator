@@ -5,7 +5,7 @@ export interface IDeliveryFeeData {
   cartValue: number;
   distance: number;
   itemsAmount: number;
-  userDate?: string;
+  userDate: string;
   utcDate?: moment.Moment;
   deliveryPrice?: number;
 }

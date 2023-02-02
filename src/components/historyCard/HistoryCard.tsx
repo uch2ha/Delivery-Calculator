@@ -5,6 +5,7 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import { IDeliveryFeeData } from '../../interfaces/DeliveryFeeData.interface';
 import { removeOneItemLocalStorage } from '../../functionality/localStotage';
 import { useNavigate } from 'react-router-dom';
+import moment from 'moment-timezone';
 
 interface IProps extends IDeliveryFeeData {}
 
@@ -12,6 +13,12 @@ const HistoryCard: React.FC<IProps> = (props) => {
   const navidate = useNavigate();
   const { id, cartValue, distance, itemsAmount, userDate, deliveryPrice } =
     props;
+
+  const convertTimeByBrowserTimeZome = (time: string): string => {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return moment(userDate).tz(tz).format('dd DD/MM/yyyy HH.mm');
+  };
+
   return (
     <div className='history-card-container'>
       <div className='value-row'>
@@ -58,7 +65,7 @@ const HistoryCard: React.FC<IProps> = (props) => {
           <span>Time</span>
         </div>
         <div className='card-amount'>
-          <span>{userDate}</span>
+          <span>{convertTimeByBrowserTimeZome(userDate)}</span>
         </div>
       </div>
       <div className='card-result'>

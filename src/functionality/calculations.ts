@@ -10,7 +10,7 @@ const calculateDeliveryFee = (data: IDeliveryFeeData): number => {
   deliveryPrice += cartValueFn(cartValue);
   deliveryPrice += distanceFn(distance);
   deliveryPrice += itemsAmountFn(itemsAmount);
-  deliveryPrice *= dateFn(utcDate) ? 1.2 : 1;
+  if (utcDate) deliveryPrice *= dateFn(utcDate) ? 1.2 : 1;
 
   return deliveryPrice >= 15 ? 15 : deliveryPrice;
 };

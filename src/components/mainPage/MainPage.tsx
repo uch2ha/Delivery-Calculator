@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import NavBar from '../navBar/NavBar';
 import moment from 'moment-timezone';
 import calculateDeliveryFee from '../../functionality/calculations';
-import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 import { updateLocalStorage } from '../../functionality/localStotage';
 import { useNavigate } from 'react-router-dom';
+import Calculator from '../calculator/Calculator';
 
 const MainPage: React.FC = (): JSX.Element => {
   const navigate = useNavigate();
@@ -91,83 +91,17 @@ const MainPage: React.FC = (): JSX.Element => {
         <div className='calculator-logo btn' onClick={() => navigate('/about')}>
           <span>Delivery Fee Calculator</span>
         </div>
-        <div className='calculator-inputs'>
-          <div>
-            <span className='input-name'>Cart value</span>
-          </div>
-          <div>
-            <span className='input-body'>
-              <input
-                type='text'
-                id='cartValue'
-                value={cartValue}
-                onChange={handleInput}
-              />
-              <RiMoneyEuroCircleLine size={30} />
-            </span>
-          </div>
-          <div>
-            <span className='input-name'>Delivery distance</span>
-          </div>
-          <div>
-            <span className='input-body delivery-icon'>
-              <input
-                type='text'
-                id='distance'
-                value={distance}
-                onChange={handleInput}
-              />
-              m
-            </span>
-          </div>
-          <div>
-            <span className='input-name'>Amount of items</span>
-          </div>
-          <div>
-            <span className='input-body'>
-              <input
-                type='text'
-                id='itemsAmount'
-                value={itemsAmount}
-                onChange={handleInput}
-              />
-            </span>
-          </div>
-          <div>
-            <span className='input-name'>Time</span>
-          </div>
-          <div>
-            <span className='input-body'>
-              <input
-                className='date-input'
-                id='date'
-                type='datetime-local'
-                value={userDate}
-                onChange={handleInput}
-              />
-            </span>
-          </div>
-        </div>
-        <div className='calculator-btn'>
-          <div
-            className='btn-calculate btn'
-            onClick={() => calculateDeliveryHandler()}
-          >
-            <span>Calculate delivery price</span>
-          </div>
-          <div className='btn-refresh btn' onClick={() => handleRefresh()}>
-            <span>Refresh</span>
-          </div>
-        </div>
-        <div className='calculator-result'>
-          <div>
-            <span>Delivery price</span>
-            <div>
-              <span>= {deliveryPrice}</span>
-              <RiMoneyEuroCircleLine size={30} />
-            </div>
-          </div>
-        </div>
+
+        <Calculator
+          cartValue={cartValue}
+          distance={distance}
+          itemsAmount={itemsAmount}
+          userDate={userDate}
+          deliveryPrice={deliveryPrice}
+          handleInput={handleInput}
+          calculateDeliveryHandler={calculateDeliveryHandler}
+          handleRefresh={handleRefresh}
+        />
       </div>
     </div>
   );

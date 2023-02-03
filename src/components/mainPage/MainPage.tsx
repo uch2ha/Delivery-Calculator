@@ -6,6 +6,7 @@ import calculateDeliveryFee from '../../functionality/calculations';
 import { updateLocalStorage } from '../../functionality/localStotage';
 import { useNavigate } from 'react-router-dom';
 import Calculator from '../calculator/Calculator';
+import { v4 as uuidv4 } from 'uuid';
 
 const MainPage: React.FC = (): JSX.Element => {
   const navigate = useNavigate();
@@ -52,7 +53,7 @@ const MainPage: React.FC = (): JSX.Element => {
   const calculateDeliveryHandler = () => {
     if (cartValue === 0 || distance === 0 || itemsAmount === 0) return;
 
-    const id = moment().format('YYYY-MM-DDTHH:mm:sss');
+    const id = uuidv4();
 
     const deliveryPrice = calculateDeliveryFee({
       id,

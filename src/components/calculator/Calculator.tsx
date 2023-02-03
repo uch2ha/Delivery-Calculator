@@ -36,6 +36,7 @@ const Calculator: React.FC<IProps> = ({
               id='cartValue'
               value={cartValue}
               onChange={handleInput}
+              data-testid='cartValue'
             />
             <RiMoneyEuroCircleLine size={30} />
           </span>
@@ -50,6 +51,7 @@ const Calculator: React.FC<IProps> = ({
               id='distance'
               value={distance}
               onChange={handleInput}
+              data-testid='distance'
             />
             m
           </span>
@@ -64,6 +66,7 @@ const Calculator: React.FC<IProps> = ({
               id='itemsAmount'
               value={itemsAmount}
               onChange={handleInput}
+              data-testid='itemsAmount'
             />
           </span>
         </div>
@@ -78,6 +81,7 @@ const Calculator: React.FC<IProps> = ({
               type='datetime-local'
               value={userDate}
               onChange={handleInput}
+              data-testid='date'
             />
           </span>
         </div>
@@ -97,7 +101,7 @@ const Calculator: React.FC<IProps> = ({
         <div>
           <span>Delivery price</span>
           <div>
-            <span>= {deliveryPrice}</span>
+            <span data-testid='result'>= {deliveryPrice}</span>
             <RiMoneyEuroCircleLine size={30} />
           </div>
         </div>

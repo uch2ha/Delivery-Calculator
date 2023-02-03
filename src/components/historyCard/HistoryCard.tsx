@@ -10,7 +10,7 @@ import moment from 'moment-timezone';
 interface IProps extends IDeliveryFeeData {}
 
 const HistoryCard: React.FC<IProps> = (props) => {
-  const navidate = useNavigate();
+  const navigate = useNavigate();
   const { id, cartValue, distance, itemsAmount, userDate, deliveryPrice } =
     props;
 
@@ -32,11 +32,13 @@ const HistoryCard: React.FC<IProps> = (props) => {
           </span>
         </div>
         <div
+          data-testid='delete-one'
           className='card-delete-btn'
           onClick={() => {
             if (window.confirm('Are you sure you want to delete this item')) {
               removeOneItemLocalStorage(id);
-              navidate(0);
+              // navigate(0);
+              window.location.reload();
             }
           }}
         >
@@ -72,7 +74,7 @@ const HistoryCard: React.FC<IProps> = (props) => {
         <div>
           <span>Delivery price</span>
           <div>
-            <span>= {deliveryPrice}</span>
+            <span data-testid='result'>= {deliveryPrice}</span>
             <RiMoneyEuroCircleLine size={30} />
           </div>
         </div>

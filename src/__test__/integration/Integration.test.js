@@ -5,8 +5,8 @@ import {
   waitFor,
   cleanup,
 } from '@testing-library/react';
-import MainPage from '../../components/mainPage/MainPage.js';
-import HistoryPage from '../../components/historyPage/HistoryPage.js';
+import MainPage from '../../components/mainPage/MainPage';
+import HistoryPage from '../../components/historyPage/HistoryPage';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
 

@@ -52,7 +52,7 @@ const MainPage: React.FC = (): JSX.Element => {
   const calculateDeliveryHandler = () => {
     if (cartValue === 0 || distance === 0 || itemsAmount === 0) return;
 
-    const id = moment().format();
+    const id = moment().format('YYYY-MM-DDTHH:mm:sss');
 
     const deliveryPrice = calculateDeliveryFee({
       id,
@@ -91,7 +91,6 @@ const MainPage: React.FC = (): JSX.Element => {
         <div className='calculator-logo btn' onClick={() => navigate('/about')}>
           <span>Delivery Fee Calculator</span>
         </div>
-
         <Calculator
           cartValue={cartValue}
           distance={distance}

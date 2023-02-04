@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "test": "react-scripts test --watchAll=false",
+    "startAndTests": "npm test & npm run dev",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },

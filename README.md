@@ -7,12 +7,14 @@
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="50" height="50"/>&nbsp;
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" title="TS" alt="TS" width="50" height="50"/>&nbsp;
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" title="JS" alt="JS" width="50" height="50"/>&nbsp;
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" title="CSS" alt=CSS" width="50" height="50"/>&nbsp;
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" title="Docker" alt="Docker" width="50" height="50"/>&nbsp;
 </div>
 
-- React application are written in Typescript
+- React application is written in Typescript
 - The user interface is divided into pages that are routed through react-router-dom.
 - Tests are implemented with JavaScript language
+- CSS is used for styling
 - The application can be used/run with Docker Image or Container
 
 ## Installation

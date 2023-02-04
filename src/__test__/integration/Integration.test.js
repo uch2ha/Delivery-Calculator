@@ -64,7 +64,7 @@ describe('Integration tests', () => {
     localStorage.removeItem('DeliveryFeeData');
   });
 
-  it('Checking the presence of information on the main page', async () => {
+  it('checking the presence of information on the main page', async () => {
     render(
       <BrowserRouter>
         <MainPage />
@@ -80,7 +80,7 @@ describe('Integration tests', () => {
     expect(refreshBtn).toBeInTheDocument();
   });
 
-  it('Test calculate functionality and refresh btn', async () => {
+  it('test calculate functionality and refresh btn', async () => {
     render(
       <BrowserRouter>
         <MainPage />
@@ -112,7 +112,7 @@ describe('Integration tests', () => {
     });
   });
 
-  it('Add 2 more calc elements and check the presence of information on history page', async () => {
+  it('add 2 more calc elements and check the presence of information on history page', async () => {
     render(
       <BrowserRouter>
         <MainPage />
@@ -151,7 +151,7 @@ describe('Integration tests', () => {
     });
   });
 
-  it('Test deleteOne and deleteAll btn functionality', async () => {
+  it('test deleteOne and deleteAll btn functionality', async () => {
     render(
       <BrowserRouter>
         <HistoryPage />

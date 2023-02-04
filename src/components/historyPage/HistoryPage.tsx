@@ -1,13 +1,13 @@
 import './HistoryPage.css';
 import React, { useEffect, useState } from 'react';
-import NavBar from '../navBar/NavBar';
-import HistoryCard from '../historyCard/HistoryCard';
+import { useNavigate } from 'react-router-dom';
 import { IDeliveryFeeData } from '../../interfaces/DeliveryFeeData.interface';
 import {
   fetchLocalStorage,
   removeAllLocalStorage,
 } from '../../functionality/localStotage';
-import { useNavigate } from 'react-router-dom';
+import HistoryCard from '../historyCard/HistoryCard';
+import NavBar from '../navBar/NavBar';
 
 const HistoryPage: React.FC = (): JSX.Element => {
   const navidate = useNavigate();

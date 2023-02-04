@@ -1,5 +1,4 @@
 import './AboutPage.css';
-import React from 'react';
 import NavBar from '../navBar/NavBar';
 
 const AboutPage = () => {

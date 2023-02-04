@@ -1,11 +1,11 @@
-import React from 'react';
 import './HistoryCard.css';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import moment from 'moment-timezone';
 import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 import { TiDeleteOutline } from 'react-icons/ti';
 import { IDeliveryFeeData } from '../../interfaces/DeliveryFeeData.interface';
 import { removeOneItemLocalStorage } from '../../functionality/localStotage';
-import { useNavigate } from 'react-router-dom';
-import moment from 'moment-timezone';
 
 interface IProps extends IDeliveryFeeData {}
 

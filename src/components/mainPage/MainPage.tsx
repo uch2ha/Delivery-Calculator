@@ -1,12 +1,12 @@
 import './MainPage.css';
 import React, { useState } from 'react';
-import NavBar from '../navBar/NavBar';
-import moment from 'moment-timezone';
-import calculateDeliveryFee from '../../functionality/calculations';
-import { updateLocalStorage } from '../../functionality/localStotage';
 import { useNavigate } from 'react-router-dom';
-import Calculator from '../calculator/Calculator';
+import moment from 'moment-timezone';
 import { v4 as uuidv4 } from 'uuid';
+import { updateLocalStorage } from '../../functionality/localStotage';
+import calculateDeliveryFee from '../../functionality/calculations';
+import Calculator from '../calculator/Calculator';
+import NavBar from '../navBar/NavBar';
 
 const MainPage: React.FC = (): JSX.Element => {
   const navigate = useNavigate();

@@ -2,16 +2,16 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render, fireEvent } from '@testing-library/react';
 import moment from 'moment-timezone';
-import HistoryCard from '../../components/historyCard/HistoryCard.tsx';
+import HistoryCard from '../../components/historyCard/HistoryCard';
 import { BrowserRouter } from 'react-router-dom';
 import '@testing-library/jest-dom';
+import { removeOneItemLocalStorage } from '../../functionality/localStotage';
 
 jest.mock('../../functionality/localStotage', () => ({
   removeOneItemLocalStorage: jest.fn(),
 }));
 
-const mockRemoveOneItemLocalStorage =
-  require('../../functionality/localStotage').removeOneItemLocalStorage;
+const mockRemoveOneItemLocalStorage = removeOneItemLocalStorage;
 
 const props = {
   id: '123',

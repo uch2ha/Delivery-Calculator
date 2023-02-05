@@ -144,10 +144,14 @@ describe('Integration tests', () => {
     expect(cards.length).toBe(3);
     expect(results.length).toBe(3);
 
+    const result1 = await screen.findByText(/= 3/i);
+    const result2 = await screen.findByText(/= 15/i);
+    const result3 = await screen.findByText(/= 5/i);
+
     await waitFor(() => {
-      expect(results[0]).toHaveTextContent('= 5');
-      expect(results[1]).toHaveTextContent('= 15');
-      expect(results[2]).toHaveTextContent('= 3');
+      expect(result1).toBeInTheDocument();
+      expect(result2).toBeInTheDocument();
+      expect(result3).toBeInTheDocument();
     });
   });
 

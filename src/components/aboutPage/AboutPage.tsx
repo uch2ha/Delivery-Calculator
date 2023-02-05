@@ -1,7 +1,8 @@
 import './AboutPage.css';
+import React from 'react';
 import NavBar from '../navBar/NavBar';
 
-const AboutPage = () => {
+const AboutPage: React.FC = () => {
   return (
     <div className='root-container'>
       <NavBar />

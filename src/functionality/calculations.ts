@@ -47,7 +47,9 @@ const itemsAmountFn = (quantity: number): number => {
 };
 
 const dateFn = (day: moment.Moment): boolean => {
+  // check if day is Friday
   if (day.weekday() === 5) {
+    // check if time is between 15 and 19 hours
     if (day.utc().hours() <= 19 && day.utc().hours() >= 15) return true;
   }
   return false;

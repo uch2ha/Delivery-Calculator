@@ -10,9 +10,10 @@ import HistoryCard from '../historyCard/HistoryCard';
 import NavBar from '../navBar/NavBar';
 
 const HistoryPage: React.FC = (): JSX.Element => {
-  const navidate = useNavigate();
+  const navigate = useNavigate();
   const [data, setData] = useState<IDeliveryFeeData[]>([]);
 
+  // fetch the history data from localStorage
   useEffect(() => {
     const data = fetchLocalStorage();
     setData(data);
@@ -27,7 +28,7 @@ const HistoryPage: React.FC = (): JSX.Element => {
         onClick={() => {
           if (window.confirm('Are you sure you want to delete all items')) {
             removeAllLocalStorage();
-            navidate('/');
+            navigate('/');
           }
         }}
       >
@@ -36,7 +37,6 @@ const HistoryPage: React.FC = (): JSX.Element => {
       <div className='history-container'>
         <div className='history-card-grid'>
           {data
-            .reverse()
             .map((el: IDeliveryFeeData) => {
               return (
                 <HistoryCard

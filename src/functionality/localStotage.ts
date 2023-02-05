@@ -1,7 +1,9 @@
 import { IDeliveryFeeData } from '../interfaces/DeliveryFeeData.interface';
 
+// add item to local storage array
 export const updateLocalStorage = (item: IDeliveryFeeData): void => {
   const stringData = localStorage.getItem('DeliveryFeeData');
+
   // if local storage is empty add first item to it
   if (!stringData)
     return localStorage.setItem('DeliveryFeeData', JSON.stringify([item]));
@@ -33,10 +35,12 @@ export const updateLocalStorage = (item: IDeliveryFeeData): void => {
   if (isDuplicate) return;
 
   data.push(item);
+
   //set updated array of items to local storage
   return localStorage.setItem('DeliveryFeeData', JSON.stringify(data));
 };
 
+// get and return data from local storage
 export const fetchLocalStorage = (): IDeliveryFeeData[] => {
   const stringData = localStorage.getItem('DeliveryFeeData');
 
@@ -47,6 +51,7 @@ export const fetchLocalStorage = (): IDeliveryFeeData[] => {
   return data;
 };
 
+//removes a single item from local storage based on its id
 export const removeOneItemLocalStorage = (id: string): void => {
   const stringData = localStorage.getItem('DeliveryFeeData');
 

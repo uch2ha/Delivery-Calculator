@@ -1,6 +1,7 @@
+import React from 'react';
 import NavBar from '../navBar/NavBar';
 
-const NotFoundPage = () => {
+const NotFoundPage: React.FC = () => {
   return (
     <div className='root-container'>
       <NavBar />

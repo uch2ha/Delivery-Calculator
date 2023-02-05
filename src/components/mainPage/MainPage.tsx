@@ -24,9 +24,11 @@ const MainPage: React.FC = (): JSX.Element => {
       setUserDate(value);
       setUtcDate(fundTimeZoneConverTimeToUTC(value));
     }
+    // dont let you to input more than 17 characters
     if (value.length >= 17) {
       return;
     }
+    // dont let you to input empty or not number values
     if (!Number(value) && value !== '') {
       return;
     }
@@ -51,7 +53,13 @@ const MainPage: React.FC = (): JSX.Element => {
   };
 
   const calculateDeliveryHandler = () => {
-    if (cartValue === 0 || distance === 0 || itemsAmount === 0) return;
+    if (
+      cartValue === 0 ||
+      distance === 0 ||
+      itemsAmount === 0 ||
+      userDate === ''
+    )
+      return;
 
     const id = uuidv4();
 
@@ -66,6 +74,7 @@ const MainPage: React.FC = (): JSX.Element => {
 
     setDeliveryPrice(deliveryPrice);
 
+    // add item to local storage
     updateLocalStorage({
       id,
       cartValue,

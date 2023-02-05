@@ -1,6 +1,5 @@
 import './HistoryCard.css';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import moment from 'moment-timezone';
 import { RiMoneyEuroCircleLine } from 'react-icons/ri';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -10,7 +9,6 @@ import { removeOneItemLocalStorage } from '../../functionality/localStotage';
 interface IProps extends IDeliveryFeeData {}
 
 const HistoryCard: React.FC<IProps> = (props) => {
-  const navigate = useNavigate();
   const { id, cartValue, distance, itemsAmount, userDate, deliveryPrice } =
     props;
 
@@ -37,7 +35,6 @@ const HistoryCard: React.FC<IProps> = (props) => {
           onClick={() => {
             if (window.confirm('Are you sure you want to delete this item')) {
               removeOneItemLocalStorage(id);
-              // navigate(0);
               window.location.reload();
             }
           }}

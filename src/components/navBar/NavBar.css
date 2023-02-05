@@ -21,14 +21,8 @@
   font-family: 'Fearce';
   padding-block: 0.75rem;
   margin-inline: 0.75rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .nav-bar-logo a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
   color: white;
 }

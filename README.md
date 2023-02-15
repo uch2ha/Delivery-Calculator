@@ -1,4 +1,4 @@
-# Dmitry Sinyavskiy WOLT Delivery Calculator
+# Job Interview Assignment - Delivery Calculator
 
 ## Built with
 

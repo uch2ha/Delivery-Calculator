@@ -1,5 +1,7 @@
 # Delivery Calculator - Job Interview Assignment
 
+https://delivery-calculator-uch2ha.netlify.app/
+
 ## Built with
 
 <!-- ICONS found at: ht<rtps://github.com/devicons/devicon/tree/master/icons -->

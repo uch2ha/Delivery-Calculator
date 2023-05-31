@@ -1,4 +1,5 @@
-# Delivery Calculator - Job Interview Assignment
+# Delivery Calculator
+The primary purpose of creating this app was to enhance my skills in React and TypeScript and gain practical experience in writing integration and unit tests. By developing the Delivery Calculator, I was able to strengthen my proficiency in React, TypeScript, and testing methodologies. This project has been instrumental in advancing my knowledge and expertise in front-end development and test-driven development practices.
 
 https://delivery-calculator-uch2ha.netlify.app/
 

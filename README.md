@@ -16,7 +16,7 @@ https://delivery-calculator-uch2ha.netlify.app/
 
 - React application is written in Typescript
 - The user interface is divided into pages that are routed through react-router-dom.
-- Tests are implemented with JavaScript language
+- Tests are implemented with Jest
 - CSS is used for styling
 - The application can be used/run with Docker Image or Container
 
